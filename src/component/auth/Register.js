@@ -2,20 +2,22 @@ import React, {useState} from 'react';
 
 const Register = () => {
 
-    const [userData, setUserData] = useState({
+    const [formData, setFormData] = useState({
         name: '',
         email: '',
         password: '',
         password2: '',
     })
 
-    const onChange = (e) => {
-
+    const { name, email, password, password2} = formData;
+    const handleChange = text => e => {
+        setFormData({ ...formData, [text]: e.target.value });
     };
 
-    const onSubmit = (e) => {
+    const handleSubmit = e => {
         e.preventDefault();
         console.log("button clicked");
+        console.log(name, email, password);
     };
 
     return (
@@ -25,17 +27,17 @@ const Register = () => {
                     <div className="col-mid-8 m-auto">
                         <h1 className="display-4 text-center">Sign Up</h1>
                         <p className={"lead text-center"}>
-                            Create your DevConnector account
+                            Create your EliteConnector account
                         </p>
-                        <form onSubmit={onSubmit}>
+                        <form onSubmit={handleSubmit}>
                             <div className="form-group">
                                 <input
                                     type={"text"}
                                     className={"form-control form-control-lg"}
                                     placeholder="User Name"
                                     name={"name"}
-                                    value={"name"}
-                                    onchange={onChange}
+                                    value={name}
+                                    onChange={handleChange( 'name')}
                                 />
                             </div>
                             <div className="form-group">
@@ -43,9 +45,9 @@ const Register = () => {
                                     type={"email"}
                                     className={"form-control form-control-lg"}
                                     placeholder="Email"
-                                    name={"Email"}
-                                    value={"Email"}
-                                    onchange={onChange}
+                                    name={"email"}
+                                    value={email}
+                                    onChange={handleChange ('email')}
                                 />
                                 <small className="form-text text-muted">
                                     This site uses Gravatar so if you want a profile image,
@@ -58,8 +60,8 @@ const Register = () => {
                                     className={"form-control form-control-lg"}
                                     placeholder="Password"
                                     name={"password"}
-                                    value={"password"}
-                                    onchange={onChange}
+                                    value={password}
+                                    onChange={handleChange( 'password')}
                                 />
                             </div>
                             <div className="form-group">
@@ -67,9 +69,9 @@ const Register = () => {
                                     type={"password"}
                                     className={"form-control form-control-lg"}
                                     placeholder="Confirm Password"
-                                    name={"password2"}
-                                    value={"password2"}
-                                    onchange={onChange}
+                                    name="password2"
+                                    value={password2}
+                                    onChange={handleChange( 'password2')}
                                 />
                             </div>
                             <input
