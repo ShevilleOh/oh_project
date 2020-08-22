@@ -10,6 +10,7 @@ const Register = () => {
     })
 
     const { name, email, password, password2} = formData;
+
     const handleChange = text => e => {
         setFormData({ ...formData, [text]: e.target.value });
     };
