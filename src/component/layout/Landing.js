@@ -13,11 +13,11 @@ const Landing = () => {
                             </h1>
                             <p className="lead">
                                 {' '}
-                                Create a developer profile/portfolio, share your achievements and flex
+                                Developer portfolio, sharing achievements and flex
                             </p>
                             <hr />
                             <Link to="/register" className={"btn btn-lg btn-info mr-2"}>
-                                Start Flexing
+                                Browse
                             </Link>
                             <Link to={"/login"} className={"btn btn-lg btn-light"}>
                                 Login

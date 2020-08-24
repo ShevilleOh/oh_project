@@ -28,7 +28,7 @@ const Register = () => {
                     <div className="col-mid-8 m-auto">
                         <h1 className="display-4 text-center">Sign Up</h1>
                         <p className={"lead text-center"}>
-                            Create your EliteConnector account
+                            Contact: Contact@CAEService.com for information of registerrring
                         </p>
                         <form onSubmit={handleSubmit}>
                             <div className="form-group">
