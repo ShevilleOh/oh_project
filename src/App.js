@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Route} from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 import Navbar from "./component/layout/Navbar";
 import Landing from "./component/layout/Landing";
@@ -19,7 +19,9 @@ function App() {
               <Navbar />
               <Route excat path="/" component={Dashboard} />
                 <div className={"container"}>
-                    <Route excay path={"/create-profile"} component={CreateProfile}/>
+                    <Switch>
+                        <Route excay path={"/create-profile"} component={CreateProfile}/>
+                    </Switch>
                 </div>
               {/*<Route exact path="/" component={Landing} />*/}
               {/*<div className={"container"}>*/}

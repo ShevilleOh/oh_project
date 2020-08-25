@@ -19,8 +19,8 @@ const TextFieldGroup = ({
                 type={type}
                 className={"form-control form-control-lg"}
                 placeholder={placeholder}
-                name={{name}}
-                value={{value}}
+                name={name}
+                value={value}
                 onChange={onChange}
                 disabled={disabled}
             />
